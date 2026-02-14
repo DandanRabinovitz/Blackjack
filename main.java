@@ -22,7 +22,11 @@ public class main
     //command String variable, used to store what the player is saying.
     String command;
     //constructor.
-    public main()
+    public static void main(String[] args) {
+        main game = new main();
+        game.run();
+    }
+    public void run()
     {
         //deck array list, used to store all the cards in the game.
         ArrayList<card> deck = createDeck();
