@@ -70,11 +70,11 @@ public class main
     
     //easyRandomInt methods, making it easy on myself to generate random numbers by using a more memorable name, starting at 1 instead of 0, and making the max number inclusive. takes in either a max parameter and starting at 1, or both a max and a min parameter.
     public int easyRandomInt(int max) {
-        return rand.nextInt(1, max + 1);
+        return rand.nextInt(max) + 1;
     }
     
     public int easyRandomInt(int min,int max) {
-        return rand.nextInt(min, max + 1);
+        return rand.nextInt(max - min + 1) + min;
     }
     
     //scanCommand() method, making it easy on myself to use the scanner interface.
@@ -439,6 +439,9 @@ public class main
             }
             else if(command.equals("credits")) {
                 System.out.println("you have " + credits + " credits");
+            }
+            else if(command.equals("command list")) {
+                System.out.println("command list - displays a list of your usable commands. \nhit - gives you a card from the deck.\nhit (number) - gives you the amount of cards you typed from the deck.\nstand - skips you and goes to the dealer's turn. \ndouble down - doubles your bet, gives you one card, then makes you stand. \nsplit - if you have two of the same card, splits your hand to two hands and gives them each a card, the new hand gets an equal bet to the original hand. \ndisplay cards - displays your cards. \ndisplay dealer cards - displays the dealer's cards. \ncredits - displays how many credits you have.");
             }
             else {
                 System.out.println("please type a number you would like to bet.");
